@@ -1,287 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roadmap for Mastering Java and Data Structures (DSA)</title>
+    <title>Roadmap for Mastering Java & DSA</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/dist/tailwind.min.css" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #0a1d37; /* Dark blue background */
-            color: white;
-            margin: 0;
-            padding: 20px;
-            overflow-x: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        /* Custom animations */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
         }
 
-        .container {
-            max-width: 900px;
-            width: 100%;
-        }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 36px;
-            color: white;
-            animation: fadeIn 1s ease-in;
-        }
-
-        h2 {
-            color: white;
-            margin-top: 20px;
-            font-size: 24px;
-            cursor: pointer;
-            transition: color 0.3s ease;
-            text-align: center;
-        }
-
-        h2:hover {
-            color: #f39c12;
-        }
-
-        h3 {
-            color: #7ec8f0;
-            font-size: 20px;
-            cursor: pointer;
-            transition: color 0.3s ease;
-            margin-left: 20px;
-        }
-
-        h3:hover {
-            color: #3498db;
-        }
-
-        .item {
-            color: whitesmoke;
-            margin-left: 40px;
-            font-size: 16px;
-            display: none;
-            opacity: 0;
-            animation: fadeInUp 1s forwards;
-            margin-bottom: 15px;
-        }
-
-        .item ul {
-            list-style-type: square;
-            margin-left: 20px;
-        }
-
-        .button {
-            background-color: #2980b9; /* Blue button */
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
-            display: block;
-            text-align: center;
-            width: 150px;
-            margin-left: 30px;
-            transition: background-color 0.3s ease;
-        }
-
-        .button:hover {
-            background-color: #3498db;
-        }
-
-        .show-more {
-            color: #f39c12;
-            font-size: 14px;
-            cursor: pointer;
-            margin-top: 5px;
-            display: inline-block;
-            text-align: center;
-        }
-
-        /* Animation */
         @keyframes fadeIn {
             0% {
                 opacity: 0;
             }
+
             100% {
                 opacity: 1;
             }
         }
 
-        @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* Styling for section headers */
+        .section-header {
+            cursor: pointer;
+            padding: 1.2rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            background-color: #0f172a; /* Dark blue-black */
+            color: #a3bffa; /* Soft blue */
+            border-radius: 8px;
+            border: 1px solid #374151; /* Subtle border */
+            transition: background-color 0.3s ease;
+        }
+
+        .section-header:hover {
+            background-color: #3b82f6; /* Cyberpunk neon blue */
+        }
+
+        .section-content {
+            display: none;
+            padding-left: 2rem;
+            padding-bottom: 1rem;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #e2e8f0; /* Light gray */
+        }
+
+        .section-content ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+        }
+
+        .transition-height {
+            transition: max-height 0.3s ease;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #0f172a;
+            color: #a3bffa;
+        }
+
+        /* Dark background with subtle neon touches */
+        body {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .header-text {
+            color: #a3bffa;
+            text-shadow: 0 0 10px rgba(163, 191, 250, 0.7);
+        }
+
+        .sub-header-text {
+            color: #94a3b8;
+        }
+
+        .section-header, .section-header:hover {
+            box-shadow: 0px 0px 15px rgba(59, 130, 246, 0.6);
+        }
+
+        /* Add some subtle glowing effect for a cyberpunk feel */
+        .glow {
+            text-shadow: 0 0 5px #fff, 0 0 10px #3b82f6, 0 0 20px #3b82f6, 0 0 40px #3b82f6;
         }
     </style>
 </head>
+
 <body>
 
-    <div class="container">
-        <h1>Roadmap for Mastering Java and Data Structures (DSA)</h1>
+    <!-- Header Section -->
+    <header class="w-full bg-[#1e293b] py-8 text-center">
+        <h1 class="text-4xl font-bold header-text glow">Roadmap for Mastering Java and DSA</h1>
+        <p class="mt-4 text-lg sub-header-text">A structured path to mastering Java and Data Structures</p>
+    </header>
 
-        <h2 class="step-title">Step 1: Java Basics (Foundation)</h2>
-        <div class="item">
-            <h3>1. Introduction to Java</h3>
-            <ul>
-                <li>What is Java? History and Features</li>
-                <li>Platform Independence: Write Once, Run Anywhere</li>
-                <li>Components of Java: JVM, JDK, JRE</li>
-                <li>Types of Java Applications: Desktop, Web, Mobile, Enterprise</li>
-                <li>Setting up Development Environment:</li>
-                <ul>
-                    <li>Installing JDK</li>
-                    <li>Configuring Path and Environment Variables</li>
-                    <li>Choosing and Setting Up IDE (Eclipse, IntelliJ, VS Code)</li>
-                </ul>
-                <li>Writing Your First Java Program:</li>
-                <ul>
-                    <li>Understanding <code>public static void main(String[] args)</code></li>
-                    <li>Compiling and Running Java Programs</li>
-                </ul>
-            </ul>
-        </div>
-        <button class="button" onclick="toggleVisibility(0)">Show/Hide Details</button>
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 py-8">
 
-        <h2 class="step-title">Step 2: Object-Oriented Programming (OOP)</h2>
-        <div class="item">
-            <h3>1. OOP Basics</h3>
-            <ul>
-                <li>Classes and Objects:</li>
+        <!-- Step 1 -->
+        <section class="mb-8 fade-in">
+            <div class="section-header" onclick="toggleSection(1)">
+                <h2>Step 1: Java Basics (Foundation)</h2>
+            </div>
+            <div class="section-content transition-height" id="section-1">
                 <ul>
-                    <li>Class Definition and Structure</li>
-                    <li>Creating and Using Objects</li>
+                    <li>Introduction to Java: What is Java, History, and Features</li>
+                    <li>Setting up Development Environment: Installing JDK and Choosing IDE</li>
+                    <li>Core Java Syntax: Data Types, Variables, Operators</li>
+                    <li>Input/Output: Using Scanner, BufferedReader, and File I/O</li>
                 </ul>
-                <li>Fields:</li>
-                <ul>
-                    <li>Static and Instance Variables</li>
-                    <li>Default Values and Initialization</li>
-                </ul>
-                <li>Methods:</li>
-                <ul>
-                    <li>Instance and Static Methods</li>
-                    <li>Method Signature and Overloading</li>
-                    <li>Access Modifiers: Public, Private, Protected, Default</li>
-                </ul>
-                <li>Constructors:</li>
-                <ul>
-                    <li>No-Argument Constructor</li>
-                    <li>Parameterized Constructor</li>
-                    <li>Constructor Overloading</li>
-                    <li><code>this</code> Keyword Usage</li>
-                </ul>
-            </ul>
-        </div>
-        <button class="button" onclick="toggleVisibility(1)">Show/Hide Details</button>
+            </div>
+        </section>
 
-        <h2 class="step-title">Step 3: Data Structures Basics</h2>
-        <div class="item">
-            <h3>1. Arrays</h3>
-            <ul>
-                <li>Types of Arrays:</li>
+        <!-- Step 2 -->
+        <section class="mb-8 fade-in">
+            <div class="section-header" onclick="toggleSection(2)">
+                <h2>Step 2: Object-Oriented Programming (OOP)</h2>
+            </div>
+            <div class="section-content transition-height" id="section-2">
                 <ul>
-                    <li>Single-Dimensional Arrays</li>
-                    <li>Multi-Dimensional Arrays (2D and Beyond)</li>
+                    <li>Classes and Objects: Understanding Fields, Methods, and Constructors</li>
+                    <li>Principles of OOP: Inheritance, Polymorphism, Encapsulation, Abstraction</li>
+                    <li>Exception Handling: try-catch, Custom Exceptions</li>
                 </ul>
-                <li>Memory Allocation: Heap vs. Stack</li>
-                <li>Array Traversal and Iteration</li>
-            </ul>
-        </div>
-        <button class="button" onclick="toggleVisibility(2)">Show/Hide Details</button>
+            </div>
+        </section>
 
-        <h2 class="step-title">Step 4: Advanced Data Structures and Collections</h2>
-        <div class="item">
-            <h3>1. Collections Framework</h3>
-            <ul>
-                <li>List Interface:</li>
+        <!-- Step 3 -->
+        <section class="mb-8 fade-in">
+            <div class="section-header" onclick="toggleSection(3)">
+                <h2>Step 3: Data Structures Basics</h2>
+            </div>
+            <div class="section-content transition-height" id="section-3">
                 <ul>
-                    <li>ArrayList: Dynamic Array Implementation</li>
-                    <li>LinkedList: Doubly Linked List</li>
-                    <li>Vector and Stack</li>
+                    <li>Arrays: Types, Memory Allocation, Traversal</li>
+                    <li>Operations on Arrays: Searching, Sorting (Bubble, Selection, Insertion)</li>
+                    <li>Array-Based Problems: Sliding Window, Two Pointers</li>
                 </ul>
-                <li>Set Interface:</li>
+            </div>
+        </section>
+
+        <!-- Step 4 -->
+        <section class="mb-8 fade-in">
+            <div class="section-header" onclick="toggleSection(4)">
+                <h2>Step 4: Advanced Data Structures and Collections</h2>
+            </div>
+            <div class="section-content transition-height" id="section-4">
                 <ul>
-                    <li>HashSet: Unique Unordered Elements</li>
-                    <li>LinkedHashSet: Ordered Elements</li>
-                    <li>TreeSet: Sorted Elements</li>
+                    <li>Collections Framework: List, Set, Map Interfaces</li>
+                    <li>Linear Data Structures: Stack, Queue</li>
+                    <li>Non-Linear Data Structures: Trees, Graphs</li>
                 </ul>
-                <li>Map Interface:</li>
+            </div>
+        </section>
+
+        <!-- Step 5 -->
+        <section class="mb-8 fade-in">
+            <div class="section-header" onclick="toggleSection(5)">
+                <h2>Step 5: Core Algorithms</h2>
+            </div>
+            <div class="section-content transition-height" id="section-5">
                 <ul>
-                    <li>HashMap: Key-Value Storage</li>
-                    <li>LinkedHashMap: Maintains Insertion Order</li>
-                    <li>TreeMap: Sorted Key-Value Pairs</li>
+                    <li>Searching Algorithms: Linear Search, Binary Search</li>
+                    <li>Sorting Algorithms: Bubble Sort, Merge Sort, Quick Sort</li>
+                    <li>Dynamic Programming, Greedy Algorithms, Backtracking</li>
                 </ul>
-            </ul>
-        </div>
-        <button class="button" onclick="toggleVisibility(3)">Show/Hide Details</button>
+            </div>
+        </section>
 
-        <h2 class="step-title">Step 5: Core Algorithms</h2>
-        <div class="item">
-            <h3>1. Searching Algorithms</h3>
-            <ul>
-                <li>Sequential Search (Linear Search)</li>
-                <li>Binary Search:</li>
+        <!-- Step 6 -->
+        <section class="mb-8 fade-in">
+            <div class="section-header" onclick="toggleSection(6)">
+                <h2>Step 6: DSA Integration with Practice</h2>
+            </div>
+            <div class="section-content transition-height" id="section-6">
                 <ul>
-                    <li>Iterative and Recursive Approaches</li>
-                    <li>Applications in Sorted Data</li>
+                    <li>Coding Challenges: Arrays, Strings, Linked Lists</li>
+                    <li>Competitive Programming Techniques: Sliding Window, Two Pointers</li>
+                    <li>Platforms for Practice: LeetCode, HackerRank, CodeChef</li>
                 </ul>
-            </ul>
-        </div>
-        <button class="button" onclick="toggleVisibility(4)">Show/Hide Details</button>
+            </div>
+        </section>
+    </main>
 
-        <h2 class="step-title">Step 6: DSA Integration with Practice</h2>
-        <div class="item">
-            <h3>1. Coding Challenges</h3>
-            <ul>
-                <li>Arrays: Subarray Problems, Kadane’s Algorithm</li>
-                <li>Strings: Anagrams, Substring Problems, Palindrome</li>
-                <li>Linked Lists: Merge Two Lists, Detect Cycle</li>
-                <li>Trees: Lowest Common Ancestor, Diameter</li>
-                <li>Graphs: Shortest Path (Dijkstra), MST (Kruskal, Prim)</li>
-            </ul>
-        </div>
-        <button class="button" onclick="toggleVisibility(5)">Show/Hide Details</button>
+    <!-- Footer -->
+    <footer class="bg-[#0f172a] text-center py-6">
+        <p class="text-sm text-[#a3bffa]">&copy; 2024 Mastering Java & DSA. All Rights Reserved.</p>
+    </footer>
 
-        <div class="item">
-            <h3>2. Competitive Programming Techniques</h3>
-            <ul>
-                <li>Sliding Window Technique</li>
-                <li>Two Pointer Technique</li>
-                <li>Binary Search on Answer Problems</li>
-            </ul>
-        </div>
-        <button class="button" onclick="toggleVisibility(6)">Show/Hide Details</button>
-
-        <div class="item">
-            <h3>3. Platforms for Practice</h3>
-            <ul>
-                <li>LeetCode: Topic-Specific Practice</li>
-                <li>HackerRank: Problem-Solving and Certifications</li>
-                <li>CodeChef and Codeforces: Competitive Contests</li>
-                <li>GeeksforGeeks: Comprehensive DSA Library</li>
-            </ul>
-        </div>
-        <button class="button" onclick="toggleVisibility(7)">Show/Hide Details</button>
-
-    </div>
-
+    <!-- JavaScript for toggling sections -->
     <script>
-        function toggleVisibility(index) {
-            const items = document.querySelectorAll('.item');
-            const button = event.target;
-            const isVisible = items[index].style.display === 'block';
+        // Function to toggle visibility of section content
+        function toggleSection(sectionNumber) {
+            const content = document.getElementById(`section-${sectionNumber}`);
+            const isVisible = content.style.display === 'block';
 
-            items[index].style.display = isVisible ? 'none' : 'block';
-            items[index].style.opacity = isVisible ? '0' : '1';
-            button.textContent = isVisible ? 'Show/Hide Details' : 'Hide Details';
+            // Close all sections before toggling the current one
+            const allSections = document.querySelectorAll('.section-content');
+            allSections.forEach(section => {
+                section.style.display = 'none';
+            });
+
+            // Toggle current section visibility
+            content.style.display = isVisible ? 'none' : 'block';
         }
     </script>
 
 </body>
+
 </html>
