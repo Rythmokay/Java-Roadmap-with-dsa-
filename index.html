@@ -7,70 +7,63 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #1c1c1c;
+            background-color: #0a1d37; /* Dark blue background */
             color: white;
             margin: 0;
             padding: 20px;
             overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
         }
 
         h1 {
-            color: white;
             text-align: center;
             margin-bottom: 30px;
             font-size: 36px;
+            color: white;
             animation: fadeIn 1s ease-in;
         }
 
         h2 {
-            color: #ff6347;
+            color: white;
             margin-top: 20px;
             font-size: 24px;
             cursor: pointer;
             transition: color 0.3s ease;
+            text-align: center;
         }
 
         h2:hover {
-            color: #ff4500;
+            color: #f39c12;
         }
 
         h3 {
-            color: #4682b4;
+            color: #7ec8f0;
             font-size: 20px;
             cursor: pointer;
             transition: color 0.3s ease;
+            margin-left: 20px;
         }
 
         h3:hover {
-            color: #4169e1;
-        }
-
-        .step-title {
-            color: #8a2be2;
-            font-size: 22px;
-            margin-top: 20px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .step-title:hover {
-            transform: scale(1.05);
-        }
-
-        .sub-title {
-            color: #32cd32;
-            font-size: 18px;
-            margin-top: 10px;
-            transition: transform 0.3s ease;
+            color: #3498db;
         }
 
         .item {
             color: whitesmoke;
-            margin-left: 20px;
+            margin-left: 40px;
             font-size: 16px;
             display: none;
             opacity: 0;
             animation: fadeInUp 1s forwards;
+            margin-bottom: 15px;
         }
 
         .item ul {
@@ -78,12 +71,32 @@
             margin-left: 20px;
         }
 
-        .item code {
-            background-color: #f4f4f9;
-            font-family: "Courier New", Courier, monospace;
-            padding: 2px 6px;
-            border-radius: 3px;
-            color: #d14;
+        .button {
+            background-color: #2980b9; /* Blue button */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            display: block;
+            text-align: center;
+            width: 150px;
+            margin-left: 30px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #3498db;
+        }
+
+        .show-more {
+            color: #f39c12;
+            font-size: 14px;
+            cursor: pointer;
+            margin-top: 5px;
+            display: inline-block;
+            text-align: center;
         }
 
         /* Animation */
@@ -106,299 +119,169 @@
                 transform: translateY(0);
             }
         }
-
-        .show-more {
-            color: #ff6347;
-            font-size: 14px;
-            cursor: pointer;
-            margin-top: 5px;
-            display: inline-block;
-            transition: color 0.3s ease;
-        }
-
-        .show-more:hover {
-            color: #ff4500;
-        }
     </style>
 </head>
 <body>
 
-    <h1>Roadmap for Mastering Java and Data Structures (DSA)</h1>
+    <div class="container">
+        <h1>Roadmap for Mastering Java and Data Structures (DSA)</h1>
 
-    <h2 class="step-title">Step 1: Java Basics (Foundation)</h2>
-    <div class="item">
-        <h3 class="sub-title">1. Introduction to Java</h3>
-        <ul>
-            <li>What is Java? History and Features</li>
-            <li>Platform Independence: Write Once, Run Anywhere</li>
-            <li>Components of Java: JVM, JDK, JRE</li>
-            <li>Types of Java Applications: Desktop, Web, Mobile, Enterprise</li>
-            <li>Setting up Development Environment:</li>
+        <h2 class="step-title">Step 1: Java Basics (Foundation)</h2>
+        <div class="item">
+            <h3>1. Introduction to Java</h3>
             <ul>
-                <li>Installing JDK</li>
-                <li>Configuring Path and Environment Variables</li>
-                <li>Choosing and Setting Up IDE (Eclipse, IntelliJ, VS Code)</li>
+                <li>What is Java? History and Features</li>
+                <li>Platform Independence: Write Once, Run Anywhere</li>
+                <li>Components of Java: JVM, JDK, JRE</li>
+                <li>Types of Java Applications: Desktop, Web, Mobile, Enterprise</li>
+                <li>Setting up Development Environment:</li>
+                <ul>
+                    <li>Installing JDK</li>
+                    <li>Configuring Path and Environment Variables</li>
+                    <li>Choosing and Setting Up IDE (Eclipse, IntelliJ, VS Code)</li>
+                </ul>
+                <li>Writing Your First Java Program:</li>
+                <ul>
+                    <li>Understanding <code>public static void main(String[] args)</code></li>
+                    <li>Compiling and Running Java Programs</li>
+                </ul>
             </ul>
-            <li>Writing Your First Java Program:</li>
-            <ul>
-                <li>Understanding <code>public static void main(String[] args)</code></li>
-                <li>Compiling and Running Java Programs</li>
-            </ul>
-        </ul>
-    </div>
+        </div>
+        <button class="button" onclick="toggleVisibility(0)">Show/Hide Details</button>
 
-    <h2 class="step-title">Step 2: Object-Oriented Programming (OOP)</h2>
-    <div class="item">
-        <h3 class="sub-title">1. OOP Basics</h3>
-        <ul>
-            <li>Classes and Objects:</li>
+        <h2 class="step-title">Step 2: Object-Oriented Programming (OOP)</h2>
+        <div class="item">
+            <h3>1. OOP Basics</h3>
             <ul>
-                <li>Class Definition and Structure</li>
-                <li>Creating and Using Objects</li>
+                <li>Classes and Objects:</li>
+                <ul>
+                    <li>Class Definition and Structure</li>
+                    <li>Creating and Using Objects</li>
+                </ul>
+                <li>Fields:</li>
+                <ul>
+                    <li>Static and Instance Variables</li>
+                    <li>Default Values and Initialization</li>
+                </ul>
+                <li>Methods:</li>
+                <ul>
+                    <li>Instance and Static Methods</li>
+                    <li>Method Signature and Overloading</li>
+                    <li>Access Modifiers: Public, Private, Protected, Default</li>
+                </ul>
+                <li>Constructors:</li>
+                <ul>
+                    <li>No-Argument Constructor</li>
+                    <li>Parameterized Constructor</li>
+                    <li>Constructor Overloading</li>
+                    <li><code>this</code> Keyword Usage</li>
+                </ul>
             </ul>
-            <li>Fields:</li>
-            <ul>
-                <li>Static and Instance Variables</li>
-                <li>Default Values and Initialization</li>
-            </ul>
-            <li>Methods:</li>
-            <ul>
-                <li>Instance and Static Methods</li>
-                <li>Method Signature and Overloading</li>
-                <li>Access Modifiers: Public, Private, Protected, Default</li>
-            </ul>
-            <li>Constructors:</li>
-            <ul>
-                <li>No-Argument Constructor</li>
-                <li>Parameterized Constructor</li>
-                <li>Constructor Overloading</li>
-                <li><code>this</code> Keyword Usage</li>
-            </ul>
-        </ul>
-    </div>
+        </div>
+        <button class="button" onclick="toggleVisibility(1)">Show/Hide Details</button>
 
-    <h3 class="sub-title">2. Principles of OOP</h3>
-    <ul>
-        <li>Inheritance:</li>
-        <ul>
-            <li>Single, Multilevel, Hierarchical</li>
-            <li>Method Overriding</li>
-            <li>Use of <code>super</code> Keyword</li>
-        </ul>
-        <li>Polymorphism:</li>
-        <ul>
-            <li>Compile-Time Polymorphism (Method Overloading)</li>
-            <li>Run-Time Polymorphism (Method Overriding)</li>
-        </ul>
-        <li>Encapsulation:</li>
-        <ul>
-            <li>Private Fields</li>
-            <li>Accessing Fields via Getters and Setters</li>
-            <li>Advantages of Data Hiding</li>
-        </ul>
-        <li>Abstraction:</li>
-        <ul>
-            <li>Abstract Classes and Methods</li>
-            <li>Interfaces: Multiple Inheritance Alternative</li>
-            <li>Differences Between Abstract Classes and Interfaces</li>
-        </ul>
-    </ul>
+        <h2 class="step-title">Step 3: Data Structures Basics</h2>
+        <div class="item">
+            <h3>1. Arrays</h3>
+            <ul>
+                <li>Types of Arrays:</li>
+                <ul>
+                    <li>Single-Dimensional Arrays</li>
+                    <li>Multi-Dimensional Arrays (2D and Beyond)</li>
+                </ul>
+                <li>Memory Allocation: Heap vs. Stack</li>
+                <li>Array Traversal and Iteration</li>
+            </ul>
+        </div>
+        <button class="button" onclick="toggleVisibility(2)">Show/Hide Details</button>
 
-    <h3 class="sub-title">3. Exception Handling</h3>
-    <ul>
-        <li>Types of Exceptions: Checked vs. Unchecked</li>
-        <li>Using <code>try</code>, <code>catch</code>, <code>finally</code></li>
-        <li>Keywords: <code>throw</code> and <code>throws</code></li>
-        <li>Creating Custom Exceptions</li>
-        <li>Common Exceptions: NullPointerException, ArrayIndexOutOfBoundsException</li>
-    </ul>
+        <h2 class="step-title">Step 4: Advanced Data Structures and Collections</h2>
+        <div class="item">
+            <h3>1. Collections Framework</h3>
+            <ul>
+                <li>List Interface:</li>
+                <ul>
+                    <li>ArrayList: Dynamic Array Implementation</li>
+                    <li>LinkedList: Doubly Linked List</li>
+                    <li>Vector and Stack</li>
+                </ul>
+                <li>Set Interface:</li>
+                <ul>
+                    <li>HashSet: Unique Unordered Elements</li>
+                    <li>LinkedHashSet: Ordered Elements</li>
+                    <li>TreeSet: Sorted Elements</li>
+                </ul>
+                <li>Map Interface:</li>
+                <ul>
+                    <li>HashMap: Key-Value Storage</li>
+                    <li>LinkedHashMap: Maintains Insertion Order</li>
+                    <li>TreeMap: Sorted Key-Value Pairs</li>
+                </ul>
+            </ul>
+        </div>
+        <button class="button" onclick="toggleVisibility(3)">Show/Hide Details</button>
 
-    <h2 class="step-title">Step 3: Data Structures Basics</h2>
-    <div class="item">
-        <h3 class="sub-title">1. Arrays</h3>
-        <ul>
-            <li>Types of Arrays:</li>
+        <h2 class="step-title">Step 5: Core Algorithms</h2>
+        <div class="item">
+            <h3>1. Searching Algorithms</h3>
             <ul>
-                <li>Single-Dimensional Arrays</li>
-                <li>Multi-Dimensional Arrays (2D and Beyond)</li>
+                <li>Sequential Search (Linear Search)</li>
+                <li>Binary Search:</li>
+                <ul>
+                    <li>Iterative and Recursive Approaches</li>
+                    <li>Applications in Sorted Data</li>
+                </ul>
             </ul>
-            <li>Memory Allocation: Heap vs. Stack</li>
-            <li>Array Traversal and Iteration</li>
-        </ul>
+        </div>
+        <button class="button" onclick="toggleVisibility(4)">Show/Hide Details</button>
 
-        <h3 class="sub-title">2. Operations on Arrays</h3>
-        <ul>
-            <li>Insertion and Deletion of Elements</li>
-            <li>Searching Algorithms:</li>
+        <h2 class="step-title">Step 6: DSA Integration with Practice</h2>
+        <div class="item">
+            <h3>1. Coding Challenges</h3>
             <ul>
-                <li>Linear Search</li>
-                <li>Binary Search (Iterative and Recursive)</li>
+                <li>Arrays: Subarray Problems, Kadane’s Algorithm</li>
+                <li>Strings: Anagrams, Substring Problems, Palindrome</li>
+                <li>Linked Lists: Merge Two Lists, Detect Cycle</li>
+                <li>Trees: Lowest Common Ancestor, Diameter</li>
+                <li>Graphs: Shortest Path (Dijkstra), MST (Kruskal, Prim)</li>
             </ul>
-            <li>Sorting Algorithms:</li>
-            <ul>
-                <li>Bubble Sort, Selection Sort, Insertion Sort</li>
-            </ul>
-            <li>Utility Operations:</li>
-            <ul>
-                <li>Reversing an Array</li>
-                <li>Rotating an Array</li>
-                <li>Finding Maximum and Minimum Elements</li>
-            </ul>
-        </ul>
+        </div>
+        <button class="button" onclick="toggleVisibility(5)">Show/Hide Details</button>
 
-        <h3 class="sub-title">3. Array-Based Problems</h3>
-        <ul>
-            <li>Sliding Window Technique</li>
-            <li>Two Pointer Problems</li>
-            <li>Prefix Sum and Difference Arrays</li>
-        </ul>
-    </div>
+        <div class="item">
+            <h3>2. Competitive Programming Techniques</h3>
+            <ul>
+                <li>Sliding Window Technique</li>
+                <li>Two Pointer Technique</li>
+                <li>Binary Search on Answer Problems</li>
+            </ul>
+        </div>
+        <button class="button" onclick="toggleVisibility(6)">Show/Hide Details</button>
 
-    <h2 class="step-title">Step 4: Advanced Data Structures and Collections</h2>
-    <div class="item">
-        <h3 class="sub-title">1. Collections Framework</h3>
-        <ul>
-            <li>List Interface:</li>
+        <div class="item">
+            <h3>3. Platforms for Practice</h3>
             <ul>
-                <li>ArrayList: Dynamic Array Implementation</li>
-                <li>LinkedList: Doubly Linked List</li>
-                <li>Vector and Stack</li>
+                <li>LeetCode: Topic-Specific Practice</li>
+                <li>HackerRank: Problem-Solving and Certifications</li>
+                <li>CodeChef and Codeforces: Competitive Contests</li>
+                <li>GeeksforGeeks: Comprehensive DSA Library</li>
             </ul>
-            <li>Set Interface:</li>
-            <ul>
-                <li>HashSet: Unique Unordered Elements</li>
-                <li>LinkedHashSet: Ordered Elements</li>
-                <li>TreeSet: Sorted Elements</li>
-            </ul>
-            <li>Map Interface:</li>
-            <ul>
-                <li>HashMap: Key-Value Storage</li>
-                <li>LinkedHashMap: Maintains Insertion Order</li>
-                <li>TreeMap: Sorted Key-Value Pairs</li>
-            </ul>
-        </ul>
+        </div>
+        <button class="button" onclick="toggleVisibility(7)">Show/Hide Details</button>
 
-        <h3 class="sub-title">2. Linear Data Structures</h3>
-        <ul>
-            <li>Stack Operations:</li>
-            <ul>
-                <li>Push, Pop, Peek</li>
-                <li>Implementation Using Arrays and Linked Lists</li>
-            </ul>
-            <li>Queue Types:</li>
-            <ul>
-                <li>Standard Queue</li>
-                <li>Circular Queue</li>
-                <li>Priority Queue</li>
-            </ul>
-        </ul>
-
-        <h3 class="sub-title">3. Non-Linear Data Structures</h3>
-        <ul>
-            <li>Trees:</li>
-            <ul>
-                <li>Binary Trees</li>
-                <li>Binary Search Trees</li>
-                <li>Tree Traversals (Inorder, Preorder, Postorder)</li>
-            </ul>
-            <li>Graphs:</li>
-            <ul>
-                <li>Representations: Adjacency Matrix and List</li>
-                <li>Traversal Techniques: BFS, DFS</li>
-            </ul>
-        </ul>
-    </div>
-
-    <h2 class="step-title">Step 5: Core Algorithms</h2>
-    <div class="item">
-        <h3 class="sub-title">1. Searching Algorithms</h3>
-        <ul>
-            <li>Sequential Search (Linear Search)</li>
-            <li>Binary Search:</li>
-            <ul>
-                <li>Iterative and Recursive Approaches</li>
-                <li>Applications in Sorted Data</li>
-            </ul>
-        </ul>
-
-        <h3 class="sub-title">2. Sorting Algorithms</h3>
-        <ul>
-            <li>Basic Sorting:</li>
-            <ul>
-                <li>Bubble Sort, Selection Sort, Insertion Sort</li>
-            </ul>
-            <li>Advanced Sorting:</li>
-            <ul>
-                <li>Merge Sort</li>
-                <li>Quick Sort</li>
-                <li>Heap Sort</li>
-            </ul>
-        </ul>
-
-        <h3 class="sub-title">3. Algorithmic Paradigms</h3>
-        <ul>
-            <li>Divide and Conquer:</li>
-            <ul>
-                <li>Examples: Merge Sort, Quick Sort</li>
-            </ul>
-            <li>Dynamic Programming:</li>
-            <ul>
-                <li>Fibonacci Series, Knapsack Problem, LCS</li>
-            </ul>
-            <li>Greedy Algorithms:</li>
-            <ul>
-                <li>Huffman Coding, Activity Selection</li>
-            </ul>
-        </ul>
-
-        <h3 class="sub-title">4. Backtracking</h3>
-        <ul>
-            <li>N-Queens Problem</li>
-            <li>Sudoku Solver</li>
-            <li>Subset Generation</li>
-        </ul>
-    </div>
-
-    <h2 class="step-title">Step 6: DSA Integration with Practice</h2>
-    <div class="item">
-        <h3 class="sub-title">1. Coding Challenges</h3>
-        <ul>
-            <li>Arrays: Subarray Problems, Kadane’s Algorithm</li>
-            <li>Strings: Anagrams, Substring Problems, Palindrome</li>
-            <li>Linked Lists: Merge Two Lists, Detect Cycle</li>
-            <li>Trees: Lowest Common Ancestor, Diameter</li>
-            <li>Graphs: Shortest Path (Dijkstra), MST (Kruskal, Prim)</li>
-        </ul>
-
-        <h3 class="sub-title">2. Competitive Programming Techniques</h3>
-        <ul>
-            <li>Sliding Window Technique</li>
-            <li>Two Pointer Technique</li>
-            <li>Binary Search on Answer Problems</li>
-        </ul>
-
-        <h3 class="sub-title">3. Platforms for Practice</h3>
-        <ul>
-            <li>LeetCode: Topic-Specific Practice</li>
-            <li>HackerRank: Problem-Solving and Certifications</li>
-            <li>CodeChef and Codeforces: Competitive Contests</li>
-            <li>GeeksforGeeks: Comprehensive DSA Library</li>
-        </ul>
     </div>
 
     <script>
-        // Toggle visibility of items with animations
-        const titles = document.querySelectorAll('.step-title, .sub-title');
-        
-        titles.forEach(title => {
-            title.addEventListener('click', function() {
-                const item = this.nextElementSibling;
-                if (item && item.classList.contains('item')) {
-                    // Toggle item visibility with a smooth animation
-                    item.style.display = item.style.display === 'block' ? 'none' : 'block';
-                }
-            });
-        });
+        function toggleVisibility(index) {
+            const items = document.querySelectorAll('.item');
+            const button = event.target;
+            const isVisible = items[index].style.display === 'block';
+
+            items[index].style.display = isVisible ? 'none' : 'block';
+            items[index].style.opacity = isVisible ? '0' : '1';
+            button.textContent = isVisible ? 'Show/Hide Details' : 'Hide Details';
+        }
     </script>
+
 </body>
 </html>
